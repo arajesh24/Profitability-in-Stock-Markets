@@ -1,21 +1,36 @@
 # Stock Market Profitability and Risk Analysis System
 
-A cloud-based system for analyzing stock market risks and profitability using Monte Carlo simulations and parallel processing for GOOG stock.
+A cloud-based system that analyzes stock market trends using advanced pattern detection and Monte Carlo simulations to predict price movements and assess trading risks.
 
-## Features
-- Real-time stock data analysis from Yahoo Finance 
-- Monte Carlo simulations for risk assessment (VAR95/99)
-- Parallel processing with AWS Lambda/EC2
-- Trading signal detection (Three White Soldiers, Three Black Crows)
-- Profit/loss calculations
-- Audit logging in AWS S3
+## Core Purpose
+The system identifies potential buying/selling opportunities by detecting specific candlestick patterns:
+- Three White Soldiers: Three consecutive rising days (bullish signal)
+- Three Black Crows: Three consecutive falling days (bearish signal)
 
-## Tech Stack
-- Google App Engine (Frontend/API)
-- AWS Lambda & EC2 (Computation)
-- AWS S3 (Storage)
-- Python, Flask, Pandas
-- yfinance for market data
+For each signal detected, the system:
+1. Calculates risk metrics (VAR95/99) through parallel Monte Carlo simulations
+2. Determines potential profit/loss over specified timeframes
+3. Helps traders make informed decisions by quantifying both opportunity and risk
+
+## Key Features
+- Pattern Detection: Automated identification of trading signals
+- Risk Assessment: Parallel Monte Carlo simulations to calculate Value at Risk
+- Profit Analysis: Historical performance evaluation of detected signals
+- Scalable Architecture: Parallel processing via AWS Lambda/EC2
+- Audit Trail: Complete history of analyses and performance
+
+## Technical Stack
+- Frontend/API: Google App Engine
+- Computation: AWS Lambda, EC2
+- Storage: AWS S3
+- Data Source: Yahoo Finance (GOOG)
+
+## Performance
+- Successfully processes 25,000+ Monte Carlo simulations per analysis
+- Supports parallel execution for faster risk calculations
+- Real-time signal detection and risk assessment
+
+The system helps traders balance potential returns with associated risks by providing quantitative metrics for decision-making in stock trading.
 
 ## Installation
 ```bash
